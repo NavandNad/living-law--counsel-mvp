@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<title>NAV & NAD Living Law | Counsel MVP</title>
+<style>
+:root{--bg:#080b10;--panel:#0e141d;--panel2:#121a25;--line:#223043;--text:#eef4fb;--muted:#90a0b4;--gold:#d7b45a;--teal:#6fd6c8;--red:#e47a7a;--green:#7bd49a;--shadow:0 18px 50px rgba(0,0,0,.35)}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at 20% -10%,#182336 0,transparent 35%),var(--bg);color:var(--text);min-height:100vh}
+button,input,textarea,select{font:inherit} button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:18px}.brand{display:flex;align-items:center;gap:12px}.crest{width:44px;height:44px;border:1px solid #5d4b22;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#1c2027,#0a0d12);box-shadow:var(--shadow);font-size:22px}.brand h1{font-size:16px;margin:0;letter-spacing:.08em}.brand small{display:block;color:var(--muted);margin-top:2px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.pill{font-size:12px;border:1px solid var(--line);padding:7px 10px;border-radius:999px;color:var(--muted);background:#0b1119}.card{background:linear-gradient(180deg,rgba(18,26,37,.96),rgba(11,16,24,.96));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.gate{max-width:620px;margin:8vh auto;padding:24px}.gate h2{margin:0 0 8px;font-size:26px}.gate p{color:var(--muted);line-height:1.55}.field{display:grid;gap:7px;margin:15px 0}.field label{font-size:12px;color:#b7c2cf}.field input,.field textarea,.field select{width:100%;border:1px solid #29394e;background:#0a1018;color:var(--text);border-radius:12px;padding:12px 13px;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:#5a789f}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid #35506d;background:#142235;color:var(--text);padding:11px 14px;border-radius:12px}.btn.primary{border-color:#76612d;background:linear-gradient(180deg,#5f4c21,#423512);color:#fff2be}.btn.ghost{background:transparent}.btn.danger{border-color:#613b42;background:#2a161b}.status{min-height:22px;margin-top:10px;font-size:13px;color:var(--muted)}.status.ok{color:var(--green)}.status.err{color:var(--red)}.hidden{display:none!important}
+.hero{padding:20px;margin-bottom:14px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase}.hero h2{margin:6px 0 8px;font-size:27px}.hero p{color:var(--muted);line-height:1.6;max-width:900px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.meta span{font-size:12px;padding:7px 9px;border:1px solid var(--line);border-radius:999px;color:#c6d1df;background:#0b1118}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.section{padding:18px}.section h3{margin:0 0 12px;font-size:16px}.finding{display:grid;gap:10px}.finding .item{border:1px solid var(--line);border-radius:13px;padding:12px;background:#0b1118}.finding .item b{display:block;color:#dce7f5;margin-bottom:5px}.finding .item p{margin:0;color:var(--muted);line-height:1.5}.residents{display:flex;flex-wrap:wrap;gap:8px}.resident{border:1px solid #314055;background:#0c131d;color:#cbd8e8;border-radius:999px;padding:8px 10px;font-size:12px}.resident.active{border-color:#7d6630;color:#ffe7a5;background:#211b0c}.chat{margin-top:12px;border:1px solid var(--line);border-radius:14px;overflow:hidden}.messages{height:360px;overflow:auto;padding:12px;display:grid;gap:10px;background:#090e15}.msg{padding:10px 11px;border-radius:12px;line-height:1.5;white-space:pre-wrap;font-size:13px}.msg.user{background:#162236;margin-left:12%}.msg.ai{background:#131916;border:1px solid #263930;margin-right:5%}.msg small{display:block;color:var(--muted);margin-bottom:5px}.composer{display:flex;gap:8px;padding:10px;background:#0b1118;border-top:1px solid var(--line)}.composer textarea{flex:1;min-height:58px;max-height:140px;resize:vertical;border:1px solid #29394e;background:#080d13;color:var(--text);border-radius:10px;padding:10px}.evidence-list{display:grid;gap:8px;margin-top:12px}.evidence-item{border:1px solid var(--line);border-radius:12px;padding:10px;background:#0b1118}.evidence-item b{font-size:13px}.evidence-item p{margin:5px 0 0;color:var(--muted);font-size:12px}.footer{color:#6f7d90;font-size:11px;line-height:1.5;margin:14px 2px 28px}.split{display:grid;grid-template-columns:1fr 1fr;gap:8px}.locknote{border-left:3px solid var(--gold);padding:10px 12px;background:#151207;color:#d5c795;border-radius:8px;margin:14px 0;font-size:12px;line-height:1.5}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.top{align-items:flex-start}.hero h2{font-size:22px}.wrap{padding:12px}.gate{margin:3vh auto;padding:18px}.messages{height:300px}.split{grid-template-columns:1fr}}
+@media print{body{background:white;color:black}.top .actions,.chat,.gate,.evidence-form,.footer{display:none!important}.card{box-shadow:none;border:1px solid #ccc;background:white}.hero p,.finding .item p,.evidence-item p{color:#333}.meta span{color:#333;border-color:#ccc;background:white}.grid{display:block}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="crest">⚖️</div>
+      <div><h1>NAV & NAD · LIVING LAW</h1><small>Counsel Interaction MVP · Matter-scoped</small></div>
+    </div>
+    <div class="actions"><span class="pill" id="sessionPill">LOCKED</span><button id="logoutBtn" class="btn danger hidden">Logout</button></div>
+  </header>
+
+  <section id="gate" class="gate card">
+    <div class="eyebrow">Founder-mediated access</div>
+    <h2>Living Law Counsel Gate</h2>
+    <p>This workspace is locked to a matter-specific invitation. A one-time sign-in credential is delivered to the founder gate and must be relayed to counsel before access opens.</p>
+    <div class="locknote">No public signup. No general archive access. The session is scoped to one Living Law matter and expires automatically.</div>
+    <div class="field"><label>Matter invitation code</label><input id="inviteCode" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter invitation code" /></div>
+    <div class="actions"><button id="requestOtp" class="btn primary">Request founder OTP</button></div>
+    <div id="otpBlock" class="hidden">
+      <div class="field"><label>One-time credential relayed by founder</label><input id="otpToken" inputmode="numeric" autocomplete="one-time-code" placeholder="Enter one-time code" /></div>
+      <div class="actions"><button id="verifyOtp" class="btn primary">Open counsel session</button></div>
+    </div>
+    <div id="gateStatus" class="status"></div>
+  </section>
+
+  <main id="app" class="hidden">
+    <section class="hero card">
+      <div class="eyebrow">Preliminary matter workspace</div>
+      <h2 id="matterTitle">Loading matter…</h2>
+      <p id="matterSummary"></p>
+      <div id="matterMeta" class="meta"></div>
+    </section>
+
+    <div class="grid">
+      <section class="section card">
+        <h3>Preliminary Finding</h3>
+        <div id="finding" class="finding"></div>
+      </section>
+
+      <section class="section card">
+        <h3>Resident Council</h3>
+        <p style="color:var(--muted);font-size:13px;line-height:1.5">Visible Living Law lenses. They do not replace counsel and cannot mutate Canon or production state.</p>
+        <div id="residentBar" class="residents"></div>
+        <div class="chat">
+          <div id="messages" class="messages"></div>
+          <div class="composer"><textarea id="messageInput" placeholder="Ask the selected resident about this matter…"></textarea><button id="sendMsg" class="btn primary">Send</button></div>
+        </div>
+      </section>
+
+      <section class="section card">
+        <h3>Evidence / Procedure Intake</h3>
+        <div class="evidence-form">
+          <div class="split">
+            <div class="field"><label>Label</label><input id="evidenceLabel" placeholder="e.g. FIR copy / PW-1 statement" /></div>
+            <div class="field"><label>Type</label><select id="evidenceType"><option>DOCUMENT</option><option>NOTE</option><option>STATEMENT</option><option>PAYMENT_RECORD</option><option>ORDER</option></select></div>
+          </div>
+          <div class="field"><label>Note</label><textarea id="evidenceNote" rows="3" placeholder="What does this prove, contradict, or leave unanswered?"></textarea></div>
+          <button id="addEvidence" class="btn">Add to matter</button>
+          <div id="evidenceStatus" class="status"></div>
+        </div>
+        <div id="evidenceList" class="evidence-list"></div>
+      </section>
+
+      <section class="section card">
+        <h3>Practitioner Boundary</h3>
+        <div class="finding">
+          <div class="item"><b>Human authority</b><p>Ali Ijaz remains professional counsel and controls filings, advice, client instructions and courtroom use.</p></div>
+          <div class="item"><b>Truth posture</b><p>Findings remain preliminary until tested against the FIR, challan, charge, evidence, dates and current primary law.</p></div>
+          <div class="item"><b>Living Law PF</b><p>This surface exposes only the matter, legal reasoning, evidence/procedure and resident council needed for counsel work. Deeper internal infrastructure remains behind the membrane.</p></div>
+          <div class="item"><b>Session scope</b><p id="sessionInfo">Matter-scoped session.</p></div>
+        </div>
+      </section>
+    </div>
+    <div class="footer">NAV & NAD Living Law · Counsel MVP. Preliminary legal-research and litigation-support workspace. Verify current law and the complete record before professional reliance.</div>
+  </main>
+</div>
+<script>
+const BASE='https://wvuluplcpdhqbrynmdyo.supabase.co/functions/v1';
+const el=id=>document.getElementById(id);
+let sessionKey=sessionStorage.getItem('ll_session')||'';
+let activeResident='CO_COUNCIL';
+
+function status(node,msg,type=''){node.textContent=msg;node.className='status '+type}
+async function post(fn,body,withSession=false){
+  const headers={'Content-Type':'application/json'};
+  if(withSession) headers['x-ll-session']=sessionKey;
+  const r=await fetch(`${BASE}/${fn}`,{method:'POST',headers,body:JSON.stringify(body)});
+  const data=await r.json().catch(()=>({error:'invalid_response'}));
+  if(!r.ok) throw new Error(data.error||'request_failed');
+  return data;
+}
+
+el('requestOtp').onclick=async()=>{
+  const invite=el('inviteCode').value.trim();
+  if(!invite) return status(el('gateStatus'),'Enter the matter invitation code.','err');
+  status(el('gateStatus'),'Requesting founder delivery…');
+  try{await post('ll-auth-request',{inviteCode:invite});el('otpBlock').classList.remove('hidden');status(el('gateStatus'),'One-time sign-in credential sent to the founder gate. Ask the founder to relay it.','ok');}
+  catch(e){status(el('gateStatus'),friendly(e.message),'err')}
+};
+
+el('verifyOtp').onclick=async()=>{
+  const invite=el('inviteCode').value.trim();const token=el('otpToken').value.trim();
+  if(!invite||!token) return status(el('gateStatus'),'Invitation code and one-time credential are both required.','err');
+  status(el('gateStatus'),'Verifying…');
+  try{const d=await post('ll-auth-verify',{inviteCode:invite,token});sessionKey=d.session_key;sessionStorage.setItem('ll_session',sessionKey);await loadApp();}
+  catch(e){status(el('gateStatus'),friendly(e.message),'err')}
+};
+
+function friendly(x){return ({access_denied:'Invitation not recognized.',invite_expired:'Invitation has expired.',invite_exhausted:'Invitation usage limit reached.',delivery_failed:'The founder sign-in delivery could not be sent.',invalid_or_expired_token:'That one-time credential is invalid or expired.',session_invalid_or_expired:'Session expired. Request a new one-time credential.'})[x]||x.replaceAll('_',' ')}
+
+async function loadApp(){
+  try{
+    const d=await post('ll-counsel-gateway',{action:'load'},true);
+    el('gate').classList.add('hidden');el('app').classList.remove('hidden');el('logoutBtn').classList.remove('hidden');
+    el('sessionPill').textContent='MATTER SESSION · ACTIVE';
+    renderMatter(d);renderFinding(d.finding);renderResidents(d.residents);renderEvidence(d.evidence);renderHistory(d.interactions);
+    el('sessionInfo').textContent=`Scoped to this matter until ${new Date(d.session.expires_at).toLocaleString()}.`;
+  }catch(e){sessionStorage.removeItem('ll_session');sessionKey='';el('gate').classList.remove('hidden');el('app').classList.add('hidden');status(el('gateStatus'),friendly(e.message),'err')}
+}
+function renderMatter(d){const m=d.matter||{};el('matterTitle').textContent=m.title||'Living Law Matter';el('matterSummary').textContent=m.summary||'';el('matterMeta').innerHTML='';[['Reference',m.reference],['Agency',m.agency],['Status',m.status],['Sections',(m.sections||[]).join(' · ')]].forEach(([a,b])=>{if(b){const s=document.createElement('span');s.textContent=`${a}: ${b}`;el('matterMeta').appendChild(s)}})}
+function renderFinding(f){const b=f?.body||{};const order=[['Core proposition','core_proposition'],['Section 17','section_17'],['Section 18','section_18'],['Section 22','section_22'],['Section 24(6)','section_24_6'],['Section 27(vi)','section_27_vi'],['Hajj / Umrah 2024 lane','hajj_umrah_2024'],['Procedural use','procedural_use']];el('finding').innerHTML='';order.forEach(([title,key])=>{if(!b[key])return;const d=document.createElement('div');d.className='item';d.innerHTML=`<b>${esc(title)}</b><p>${esc(b[key])}</p>`;el('finding').appendChild(d)})}
+function renderResidents(rs){el('residentBar').innerHTML='';Object.entries(rs||{}).forEach(([key,r])=>{const b=document.createElement('button');b.className='resident'+(key===activeResident?' active':'');b.textContent=r.name;b.title=r.role;b.onclick=()=>{activeResident=key;renderResidents(rs)};el('residentBar').appendChild(b)})}
+function renderEvidence(items){el('evidenceList').innerHTML='';if(!items?.length){el('evidenceList').innerHTML='<div class="evidence-item"><p>No evidence notes loaded yet.</p></div>';return}items.forEach(x=>{const d=document.createElement('div');d.className='evidence-item';d.innerHTML=`<b>${esc(x.label)} · ${esc(x.evidence_type)}</b><p>${esc(x.note||'No note')} · ${new Date(x.created_at).toLocaleString()}</p>`;el('evidenceList').appendChild(d)})}
+function renderHistory(items){el('messages').innerHTML='';(items||[]).slice().reverse().forEach(x=>{addMsg('user','Counsel',x.user_message);addMsg('ai',x.resident_name,x.response_text)});if(!items?.length)addMsg('ai','CO-COUNCIL','Matter loaded. Select a resident lens and ask a trial, evidence, statutory-ingredient or procedural question.')}
+function addMsg(cls,label,text){const d=document.createElement('div');d.className='msg '+cls;d.innerHTML=`<small>${esc(label)}</small>${esc(text||'')}`;el('messages').appendChild(d);el('messages').scrollTop=el('messages').scrollHeight}
+
+el('sendMsg').onclick=async()=>{const msg=el('messageInput').value.trim();if(!msg)return;el('messageInput').value='';addMsg('user','Counsel',msg);try{const d=await post('ll-counsel-gateway',{action:'resident',resident_key:activeResident,message:msg},true);addMsg('ai',d.interaction.resident_name,d.interaction.response_text)}catch(e){addMsg('ai','SYSTEM','Interaction failed: '+friendly(e.message))}};
+el('messageInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();el('sendMsg').click()}});
+el('addEvidence').onclick=async()=>{const label=el('evidenceLabel').value.trim(),note=el('evidenceNote').value.trim(),type=el('evidenceType').value;if(!label)return status(el('evidenceStatus'),'Add a label first.','err');status(el('evidenceStatus'),'Saving…');try{await post('ll-counsel-gateway',{action:'add_evidence_note',label,note,evidence_type:type},true);el('evidenceLabel').value='';el('evidenceNote').value='';status(el('evidenceStatus'),'Saved to the matter.','ok');const d=await post('ll-counsel-gateway',{action:'load'},true);renderEvidence(d.evidence)}catch(e){status(el('evidenceStatus'),friendly(e.message),'err')}};
+el('logoutBtn').onclick=async()=>{try{await post('ll-counsel-gateway',{action:'logout'},true)}catch{}sessionStorage.removeItem('ll_session');sessionKey='';location.reload()};
+function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+if(sessionKey)loadApp();
+</script>
+</body></html>
